@@ -5,4 +5,4 @@ from time import sleep
 
 @given('Open the main page')
 def open_main(context):
-    context.app.open_main_page()
+    context.app.main_page.open_main()
