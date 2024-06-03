@@ -18,5 +18,8 @@ class BasePage:
     def click(self, *locator):
         self.find_element(*locator).click()
 
+    def wait_until_clickable(self, *locator):
+        self.wait.until(EC.element_to_be_clickable(locator), message=f'Element not clickable by {locator}').click()
+
     def input_text(self, text, *locator):
         self.find_element(*locator).send_keys(text)

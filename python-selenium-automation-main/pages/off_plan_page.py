@@ -12,8 +12,9 @@ class OffPlanPage(BasePage):
     PRICES = (By.CSS_SELECTOR, "[class='price-value']")
 
     def click_off_plan(self):
-        self.click(*self.OFF_PLAN_BTN)
-        sleep(4)
+        self.wait_until_clickable(*self.OFF_PLAN_BTN)
+        # self.click(*self.OFF_PLAN_BTN)
+        sleep(6)
 
     def click_filter_button(self):
         self.click(*self.FILTER_BTN)
@@ -31,7 +32,7 @@ class OffPlanPage(BasePage):
     def input_unit_price_to(self, price):
         self.click(*self.UNIT_PRICE_TO)
         self.input_text(price, *self.UNIT_PRICE_TO)
-        sleep(2)
+        sleep(8)
 
     def verify_off_plan(self):
         actual_text = self.driver.find_element(By.XPATH, "//div[text()='Total projects']").text
@@ -45,4 +46,6 @@ class OffPlanPage(BasePage):
         for price_element in product_prices:
             price = int(price_element.text.replace("AED", "").replace(",", "").strip())
             assert min_price <= price <= max_price, f"Price {price} is not in the expected range."
+
+
 
