@@ -23,3 +23,6 @@ class BasePage:
 
     def input_text(self, text, *locator):
         self.find_element(*locator).send_keys(text)
+
+    def save_screenshot(self, name):
+        self.driver.save_screenshot(f'{name}.png')
