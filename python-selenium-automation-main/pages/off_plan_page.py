@@ -11,6 +11,10 @@ class OffPlanPage(BasePage):
     UNIT_PRICE_TO = (By.XPATH, "//input[@id='field-5' and @wized='unitPriceToFilter']")
     PRICES = (By.CSS_SELECTOR, "[class='price-value']")
 
+    #MOBILE
+    OFF_PLAN_BTN_MOBILE = (By.XPATH, "//div[text()='Off-plan']")
+    FILTER_BTN_MOBILE = (By.CSS_SELECTOR, 'div[class="filter-button"]')
+
     def click_off_plan(self):
         self.wait_until_clickable(*self.OFF_PLAN_BTN)
         # self.click(*self.OFF_PLAN_BTN)
@@ -46,6 +50,21 @@ class OffPlanPage(BasePage):
         for price_element in product_prices:
             price = int(price_element.text.replace("AED", "").replace(",", "").strip())
             assert min_price <= price <= max_price, f"Price {price} is not in the expected range."
+
+    # MOBILE METHODS
+
+    def click_off_plan_mobile(self):
+        # self.wait_until_clickable(*self.OFF_PLAN_BTN_MOBILE)
+        # self.click(*self.OFF_PLAN_BTN_MOBILE)
+        sleep(3)
+        elements = self.find_elements(*self.OFF_PLAN_BTN_MOBILE)
+        elements[2].click()
+        sleep(4)
+
+    def click_filter_button_mobile(self):
+        self.click(*self.FILTER_BTN_MOBILE)
+        sleep(3)
+
 
 
 

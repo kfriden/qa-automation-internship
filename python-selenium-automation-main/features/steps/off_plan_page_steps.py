@@ -31,3 +31,13 @@ def input_unit_price_from(context, price):
 @when('Click Apply filter button')
 def click_apply_filter(context):
     context.app.off_plan_page.click_apply_filter()
+
+# MOBILE STEPS
+
+@when('Click on off plan at the bottom left')
+def click_off_plan_mobile(context):
+    context.app.off_plan_page.click_off_plan_mobile()
+
+@then('Click filter button in top right-hand corner')
+def click_filter_button(context):
+    context.app.off_plan_page.click_filter_button_mobile()
