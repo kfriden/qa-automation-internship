@@ -16,9 +16,9 @@ def browser_init(context):
     """
     :param context: Behave context
     """
-    # driver_path = ChromeDriverManager().install()
-    # service = Service(driver_path)
-    # context.driver = webdriver.Chrome(service=service)
+    driver_path = ChromeDriverManager().install()
+    service = Service(driver_path)
+    context.driver = webdriver.Chrome(service=service)
 
     # FIREFOX BROWSER
     # driver_path = GeckoDriverManager().install()
@@ -49,25 +49,26 @@ def browser_init(context):
 
     # MOBILE EMULATION
     # For Custom screen Pixel size in mobile testing
-    mobile_emulation = {
-        "deviceMetrics": {
-            "width": 390,  # Replace with your custom width
-            "height": 844,  # Replace with your custom height
-            "pixelRatio": 3  # Replace with your custom pixel ratio
-        },
-        "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Mobile/15E148 Safari/604.1"
-    }
+    # mobile_emulation = {
+    #     "deviceMetrics": {
+    #         "width": 390,  # Replace with your custom width
+    #         "height": 844,  # Replace with your custom height
+    #         "pixelRatio": 3  # Replace with your custom pixel ratio
+    #     },
+    #     "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Mobile/15E148 Safari/604.1"
+    # }
     # With Device name Testing of Mobile on Web
     # mobile_emulation = {
     #     "deviceName": "iPhone SE"  # You can use other device names as well
     # }
     # Chrome options
-    chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_experimental_option("mobileEmulation", mobile_emulation)
-    driver_path = ChromeDriverManager().install()
-    service = Service(driver_path)
-    context.driver = webdriver.Chrome(service=service, options=chrome_options)
-    context.driver.execute_script("document.body.style.zoom='50%'")
+    # chrome_options = webdriver.ChromeOptions()
+    # chrome_options.add_experimental_option("mobileEmulation", mobile_emulation)
+    # driver_path = ChromeDriverManager().install()
+    # service = Service(driver_path)
+    # context.driver = webdriver.Chrome(service=service, options=chrome_options)
+    # context.driver.execute_script("document.body.style.zoom='50%'")
+
 
     context.driver.maximize_window()
 
