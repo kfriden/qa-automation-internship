@@ -35,16 +35,20 @@ class RegistrationPage(BasePage):
 
     def verify_name(self):
         actual_text = self.driver.find_element(By.CSS_SELECTOR, 'input[name="Full-Name"]').get_attribute('value')
-        assert 'Kaitlyn Friden' in actual_text, f'Error: Text not in {actual_text}'
+        expected_result = 'Kaitlyn Friden'
+        assert expected_result in actual_text, f'Error: Text not in {actual_text}'
 
     def verify_phone(self):
         actual_text = self.driver.find_element(By.CSS_SELECTOR, 'input[name="Phone"]').get_attribute('value')
-        assert '888 350 1600' in actual_text, f'Error: Text not in {actual_text}'
+        expected_result = '888 350 1600'
+        assert expected_result in actual_text, f'Error: Text not in {actual_text}'
 
     def verify_email(self):
         actual_text = self.driver.find_element(By.CSS_SELECTOR, 'input[name="Email"]').get_attribute('value')
-        assert 'cutelizzie@verizon.net' in actual_text, f'Error: Text not in {actual_text}'
+        expected_result = 'cutelizzie@verizon.net'
+        assert expected_result in actual_text, f'Error: Text not in {actual_text}'
 
     def verify_password(self):
         actual_text = self.driver.find_element(By.CSS_SELECTOR, 'input[name="Password"]').get_attribute('value')
-        assert '$onicx89' in actual_text, f'Error: Text not in {actual_text}'
+        expected_result = '$onicx89'
+        assert expected_result in actual_text, f'Error: Text not in {actual_text}'
