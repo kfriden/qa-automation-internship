@@ -32,6 +32,10 @@ def input_unit_price_from(context, price):
 def click_apply_filter(context):
     context.app.off_plan_page.click_apply_filter()
 
+@then("Click 'Connect the company' button on left side column")
+def click_conn_company_btn(context):
+    context.app.off_plan_page.click_conn_company_btn()
+
 # MOBILE STEPS
 
 @when('Click on off plan at the bottom left')

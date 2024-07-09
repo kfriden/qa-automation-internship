@@ -10,6 +10,7 @@ class OffPlanPage(BasePage):
     UNIT_PRICE_FROM = (By.XPATH, "//input[@id='field-5' and @wized='unitPriceFromFilter']")
     UNIT_PRICE_TO = (By.XPATH, "//input[@id='field-5' and @wized='unitPriceToFilter']")
     PRICES = (By.CSS_SELECTOR, "[class='price-value']")
+    CONN_COMPANY_BTN = (By.CSS_SELECTOR, 'a[class="button-link-menu w-inline-block"]')
 
     #MOBILE
     OFF_PLAN_BTN_MOBILE = (By.XPATH, "//div[text()='Off-plan']")
@@ -26,6 +27,10 @@ class OffPlanPage(BasePage):
 
     def click_apply_filter(self):
         self.click(*self.APPLY_FILTER_BTN)
+        sleep(3)
+
+    def click_conn_company_btn(self):
+        self.click(*self.CONN_COMPANY_BTN)
         sleep(3)
 
     def input_unit_price_from(self, price):

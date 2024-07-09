@@ -26,5 +26,19 @@ class BasePage:
     def input_text(self, text, *locator):
         self.find_element(*locator).send_keys(text)
 
+    def verify_partial_url(self, expected_partial_url):
+        self.wait.until(EC.url_contains(expected_partial_url), message= f'URL does not contain {expected_partial_url}')
+
     def save_screenshot(self, name):
         self.driver.save_screenshot(f'{name}.png')
+
+    def switch_to_new_window(self):
+        self.wait.until(EC.new_window_is_opened)
+        all_windows = self.driver.window_handles
+        print('ALL windows', self.driver.window_handles)
+        print('Switching to...', all_windows[1])
+        self.driver.switch_to.window(all_windows[1])
+
+    def switch_to_window_by_id(self, window_id):
+        print('Switching to...', window_id)
+        self.driver.switch_to.window(window_id)
