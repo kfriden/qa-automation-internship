@@ -11,18 +11,18 @@ class MainPage(BasePage):
 
     def open_main(self):
         self.driver.get('https://soft.reelly.io/sign-in')
-        sleep(8)
+        sleep(4)
 
     def input_username(self, username):
         self.click(*self.USERNAME_INPUT)
         self.input_text(username, *self.USERNAME_INPUT)
-        sleep(4)
+        sleep(3)
 
     def input_password(self, password):
         self.click(*self.PASSWORD_INPUT)
         self.input_text(password, *self.PASSWORD_INPUT)
-        sleep(4)
+        sleep(3)
 
     def click_continue(self):
         self.click(*self.LOGIN_BTN)
-        sleep(4)
+        sleep(3)
