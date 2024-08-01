@@ -1,5 +1,7 @@
 from pages.base_page import BasePage
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 
 
@@ -11,6 +13,8 @@ class SettingsPage(BasePage):
     TESTCOM_INPUT = (By.CSS_SELECTOR, 'input#Company-name')
     CLOSE_BTN = (By.CSS_SELECTOR, 'a.close-button')
     SAVE_BTN = (By.CSS_SELECTOR, 'div.save-changes-button')
+    LANG_BUTTON = (By.CSS_SELECTOR, 'div#w-dropdown-toggle-0')
+    RU_BTN = (By.XPATH, "//a[text()='RU']")
 
     def click_settings_btn(self):
         self.click(*self.SETTINGS_BTN)
@@ -49,6 +53,15 @@ class SettingsPage(BasePage):
         self.input_text(test, *self.TESTCOM_INPUT)
         sleep(2)
 
+    def change_lng(self):
+        lang_button = self.find_element(*self.LANG_BUTTON)
+
+        actions = ActionChains(self.driver)
+        actions.move_to_element(lang_button).perform()
+        sleep(3)
+        self.click(*self.RU_BTN)
+        sleep(3)
+
     def verify_new_name(self):
         actual_text = self.driver.find_element(By.CSS_SELECTOR, 'input[name="Fullname"]').get_attribute('value')
         expected_result = 'Kit'
@@ -63,3 +76,9 @@ class SettingsPage(BasePage):
         actual_text = self.driver.find_element(By.CSS_SELECTOR, 'input#Company-name').get_attribute('value')
         expected_result = 'helllooooo'
         assert expected_result in actual_text, f'Error: Text not in {actual_text}'
+
+    def verify_lang_change(self):
+        actual_text = self.driver.find_element(By.CSS_SELECTOR, "div#w-dropdown-toggle-0").text
+        expected_result = 'RU'
+        assert expected_result in actual_text, f'Error: Text not in {actual_text}'
+

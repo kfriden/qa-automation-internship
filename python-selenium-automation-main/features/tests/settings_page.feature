@@ -16,3 +16,14 @@ Feature: Editing Info on Settings Page
     Then Verify the right information is present in the company input field
     When Check “Save Changes” button is available and clickable
     When Check “Close” button is available and clickable
+
+
+  Scenario: User can go to settings and change language to Russian
+    Given Open the main page
+    When Login to the main page with username iarekitkit@gmail.com
+    When Login to the main page with password $onicx89
+    Then Click continue button
+    Then Click on the settings option on the left side
+    When Change the language of the page to Russian in top right corner
+    Then Verify the language has changed to Russian
+

@@ -42,3 +42,11 @@ def click_save_btn(context):
 def click_close_btn(context):
     context.app.settings_page.click_close_btn()
 
+@when('Change the language of the page to Russian in top right corner')
+def change_lng(context):
+    context.app.settings_page.change_lng()
+
+@then('Verify the language has changed to Russian')
+def verify_lang_change(context):
+    context.app.settings_page.verify_lang_change()
+
