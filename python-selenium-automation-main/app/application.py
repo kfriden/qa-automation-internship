@@ -4,6 +4,7 @@ from pages.off_plan_page import OffPlanPage
 from pages.registration_page import RegistrationPage
 from pages.connect_the_company_page import ConnectTheCompanyPage
 from pages.settings_page import SettingsPage
+from pages.add_project_page import AddProjectPage
 
 class Application:
 
@@ -14,4 +15,5 @@ class Application:
         self.registration_page = RegistrationPage(driver)
         self.connect_the_company_page = ConnectTheCompanyPage(driver)
         self.settings_page = SettingsPage(driver)
+        self.add_project_page = AddProjectPage(driver)
 

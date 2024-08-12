@@ -50,3 +50,11 @@ def change_lng(context):
 def verify_lang_change(context):
     context.app.settings_page.verify_lang_change()
 
+@then('Verify the Add a project page opens')
+def verify_add_proj(context):
+    context.app.settings_page.verify_add_proj()
+
+@when('Click on the Add a project button')
+def click_add_proj(context):
+    context.app.settings_page.click_add_proj()
+

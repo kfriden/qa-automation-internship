@@ -15,6 +15,7 @@ class SettingsPage(BasePage):
     SAVE_BTN = (By.CSS_SELECTOR, 'div.save-changes-button')
     LANG_BUTTON = (By.CSS_SELECTOR, 'div#w-dropdown-toggle-0')
     RU_BTN = (By.XPATH, "//a[text()='RU']")
+    ADD_PROJ_BTN = (By.XPATH, "//div[text()='Add a project']")
 
     def click_settings_btn(self):
         self.click(*self.SETTINGS_BTN)
@@ -30,6 +31,10 @@ class SettingsPage(BasePage):
 
     def click_close_btn(self):
         self.click(*self.CLOSE_BTN)
+        sleep(3)
+
+    def click_add_proj(self):
+        self.click(*self.ADD_PROJ_BTN)
         sleep(3)
 
     def input_name(self, name):
@@ -61,6 +66,9 @@ class SettingsPage(BasePage):
         sleep(3)
         self.click(*self.RU_BTN)
         sleep(3)
+
+    def verify_add_proj(self):
+        self.verify_partial_url('/add-a-project')
 
     def verify_new_name(self):
         actual_text = self.driver.find_element(By.CSS_SELECTOR, 'input[name="Fullname"]').get_attribute('value')

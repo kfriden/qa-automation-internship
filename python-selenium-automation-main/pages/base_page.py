@@ -32,6 +32,10 @@ class BasePage:
     def verify_partial_url(self, expected_partial_url):
         self.wait.until(EC.url_contains(expected_partial_url), message= f'URL does not contain {expected_partial_url}')
 
+    def verify_text(self, expected_text, *locator):
+        actual_text = self.find_element(*locator).text
+        assert actual_text == expected_text, f'Expected {expected_text}, but got {actual_text}'
+
     def save_screenshot(self, name):
         self.driver.save_screenshot(f'{name}.png')
 
