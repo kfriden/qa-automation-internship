@@ -38,9 +38,18 @@ Feature: Editing Info on Settings Page
     Then Verify the Add a project page opens
     When Enter test data into the name field: Daenerys
     When Enter test data into the Company name field: Krispy Kreme
+    When Enter test data into the Company role field: QA
+    When Enter test data into the age of company field: 1
+    When Enter test data into the country of project field: USA
     When Enter test data into the Name of project field: Venti Towers
+    When Enter test data into the phone number field: 1 800 789 2345
+    When Enter test data into the email field: venti_towersUSA@gmail.com
     Then Verify the right information is present in the name field
     Then Verify the right information is present in the Company name field
+    Then Verify the right information is present in the Company role field
+    Then Verify the right information is present in the Company age field
+    Then Verify the right information is present in the Company country field
     Then Verify the right information is present in the Name of project field
-    When Click "Send an application" button below
+    Then Verify the right information is present in the phone number field
+    Then Verify the right information is present in the email field
     When Verify "Send an application" button is available and clickable
