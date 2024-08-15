@@ -53,3 +53,14 @@ Feature: Editing Info on Settings Page
     Then Verify the right information is present in the phone number field
     Then Verify the right information is present in the email field
     When Verify "Send an application" button is available and clickable
+
+
+  Scenario: User can open the Community Page
+    Given Open the main page
+    When Login to the main page with username iarekitkit@gmail.com
+    When Login to the main page with password $onicx89
+    Then Click continue button
+    Then Click on the settings option on the left side
+    When Click on the Community button
+    When Verify that the Community page opens
+    Then Click the “Contact support” button is available and clickable

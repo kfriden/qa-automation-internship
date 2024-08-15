@@ -58,3 +58,7 @@ def verify_add_proj(context):
 def click_add_proj(context):
     context.app.settings_page.click_add_proj()
 
+@when('Click on the Community button')
+def click_comm_btn(context):
+    context.app.settings_page.click_comm_btn()
+

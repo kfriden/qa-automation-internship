@@ -16,6 +16,7 @@ class SettingsPage(BasePage):
     LANG_BUTTON = (By.CSS_SELECTOR, 'div#w-dropdown-toggle-0')
     RU_BTN = (By.XPATH, "//a[text()='RU']")
     ADD_PROJ_BTN = (By.XPATH, "//div[text()='Add a project']")
+    COMM_BTN = (By.CSS_SELECTOR, "a[href*=community].page-setting-block")
 
     def click_settings_btn(self):
         self.click(*self.SETTINGS_BTN)
@@ -35,6 +36,10 @@ class SettingsPage(BasePage):
 
     def click_add_proj(self):
         self.click(*self.ADD_PROJ_BTN)
+        sleep(3)
+
+    def click_comm_btn(self):
+        self.click(*self.COMM_BTN)
         sleep(3)
 
     def input_name(self, name):
