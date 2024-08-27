@@ -6,6 +6,7 @@ from pages.connect_the_company_page import ConnectTheCompanyPage
 from pages.settings_page import SettingsPage
 from pages.add_project_page import AddProjectPage
 from pages.community_page import CommunityPage
+from pages.contact_us_page import ContactUsPage
 
 class Application:
 
@@ -18,4 +19,5 @@ class Application:
         self.settings_page = SettingsPage(driver)
         self.add_project_page = AddProjectPage(driver)
         self.community_page = CommunityPage(driver)
+        self.contact_us_page = ContactUsPage(driver)
 

@@ -64,3 +64,14 @@ Feature: Editing Info on Settings Page
     When Click on the Community button
     When Verify that the Community page opens
     Then Click the “Contact support” button is available and clickable
+
+  Scenario: User can open the Contact Us page
+    Given Open the main page
+    When Login to the main page with username iarekitkit@gmail.com
+    When Login to the main page with password $onicx89
+    Then Click continue button
+    Then Click on the settings option on the left side
+    When Click on the Contact Us button
+    Then Verify the correct page opens
+    Then Verify there are at least 4 social media icons
+    Then Verify “Connect the company” button is available and clickable

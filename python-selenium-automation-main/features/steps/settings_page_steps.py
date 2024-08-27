@@ -62,3 +62,9 @@ def click_add_proj(context):
 def click_comm_btn(context):
     context.app.settings_page.click_comm_btn()
 
+@when('Click on the Contact Us button')
+def click_cont_btn(context):
+    context.app.settings_page.click_cont_btn()
+
+
+
