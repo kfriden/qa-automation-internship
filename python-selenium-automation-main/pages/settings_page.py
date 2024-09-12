@@ -18,6 +18,7 @@ class SettingsPage(BasePage):
     ADD_PROJ_BTN = (By.XPATH, "//div[text()='Add a project']")
     COMM_BTN = (By.CSS_SELECTOR, "a[href*=community].page-setting-block")
     CONT_BTN = (By.CSS_SELECTOR, "a[href*='/contact-us'].page-setting-block.w-inline-block")
+    USER_BTN = (By.CSS_SELECTOR, "a[href*='/user-guide'].page-setting-block.w-inline-block")
 
     def click_settings_btn(self):
         self.click(*self.SETTINGS_BTN)
@@ -45,6 +46,10 @@ class SettingsPage(BasePage):
 
     def click_cont_btn(self):
         self.click(*self.CONT_BTN)
+        sleep(3)
+
+    def click_user_btn(self):
+        self.click(*self.USER_BTN)
         sleep(3)
 
     def input_name(self, name):

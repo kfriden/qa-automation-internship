@@ -66,5 +66,9 @@ def click_comm_btn(context):
 def click_cont_btn(context):
     context.app.settings_page.click_cont_btn()
 
+@when('Click on the User Guide button')
+def click_user_btn(context):
+    context.app.settings_page.click_user_btn()
+
 
 
