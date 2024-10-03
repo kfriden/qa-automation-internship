@@ -87,4 +87,17 @@ Feature: Editing Info on Settings Page
     Then Verify that the user guide page opens
     Then Verify all lesson videos have titles
 
+  Scenario: User can open the Change Password Page
+    Given Open the main page
+    When Login to the main page with username iarekitkit@gmail.com
+    When Login to the main page with password $onicx89
+    Then Click continue button
+    Then Click on the settings option on the left side
+    When Click on the Change Password button
+    Then Verify that the change password page opens
+    Then Add text in Enter new password input field br0cCol1
+    Then Re-enter password in repeat password input field br0cCol1
+    When Verify the “Change password” button is available
+
+
 

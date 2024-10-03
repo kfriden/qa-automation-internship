@@ -19,6 +19,7 @@ class SettingsPage(BasePage):
     COMM_BTN = (By.CSS_SELECTOR, "a[href*=community].page-setting-block")
     CONT_BTN = (By.CSS_SELECTOR, "a[href*='/contact-us'].page-setting-block.w-inline-block")
     USER_BTN = (By.CSS_SELECTOR, "a[href*='/user-guide'].page-setting-block.w-inline-block")
+    PASS_BTN = (By.CSS_SELECTOR, "a[href*='/set-new-password'].page-setting-block.w-inline-block")
 
     def click_settings_btn(self):
         self.click(*self.SETTINGS_BTN)
@@ -50,6 +51,10 @@ class SettingsPage(BasePage):
 
     def click_user_btn(self):
         self.click(*self.USER_BTN)
+        sleep(3)
+
+    def click_pass_btn(self):
+        self.click(*self.PASS_BTN)
         sleep(3)
 
     def input_name(self, name):

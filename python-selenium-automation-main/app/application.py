@@ -8,6 +8,7 @@ from pages.add_project_page import AddProjectPage
 from pages.community_page import CommunityPage
 from pages.contact_us_page import ContactUsPage
 from pages.user_guide_page import UserGuidePage
+from pages.change_pass_page import ChangePassPage
 
 class Application:
 
@@ -22,4 +23,5 @@ class Application:
         self.community_page = CommunityPage(driver)
         self.contact_us_page = ContactUsPage(driver)
         self.user_guide_page = UserGuidePage(driver)
+        self.change_pass_page = ChangePassPage(driver)
 

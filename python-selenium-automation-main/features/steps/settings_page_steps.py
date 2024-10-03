@@ -70,5 +70,9 @@ def click_cont_btn(context):
 def click_user_btn(context):
     context.app.settings_page.click_user_btn()
 
+@when('Click on the Change Password button')
+def click_user_btn(context):
+    context.app.settings_page.click_pass_btn()
+
 
 
